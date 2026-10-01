@@ -2,7 +2,6 @@ export default {
   manifest_version: 3,
 
   name: "FocusFeed",
-
   version: "1.0.0",
 
   description: "Block distracting Reels and Shorts.",
@@ -26,7 +25,9 @@ export default {
         "https://www.youtube.com/*",
         "https://www.instagram.com/*"
       ],
-      js: ["content.js"]
+
+      js: ["src/content.js"],
+      css: ["src/content.css"]
     }
   ]
 };
