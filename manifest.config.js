@@ -1,7 +1,7 @@
 export default {
   manifest_version: 3,
 
-  name: "FocusFeed",
+  name: "doomy",
   version: "1.0.0",
 
   description: "Block distracting Reels and Shorts.",
