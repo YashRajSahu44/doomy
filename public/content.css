@@ -1,0 +1,32 @@
+#focusfeed-block {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2147483647;
+
+  background: white;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  font-family: Arial, sans-serif;
+}
+
+#focusfeed-block h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+#focusfeed-block p {
+  font-size: 18px;
+}
+
+#focusfeed-block small {
+  color: #777;
+}
