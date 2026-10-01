@@ -59,7 +59,7 @@ function App() {
         </div>
 
         <div>
-          <h1>FocusFeed</h1>
+          <h1>doomy</h1>
           <p>Stay focused. Scroll less.</p>
         </div>
       </div>
@@ -116,7 +116,7 @@ function App() {
 
 
       <div className="footer">
-        FocusFeed helps you stay away from
+        doomy helps you stay away from
         short-form content.
       </div>
 
