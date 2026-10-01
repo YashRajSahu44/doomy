@@ -4,7 +4,7 @@ let settings = {
 };
 
 
-// Get saved settings
+//
 chrome.storage.local.get(settings, (result) => {
 
   settings = result;
@@ -14,9 +14,8 @@ chrome.storage.local.get(settings, (result) => {
 });
 
 
-// -------------------------
 // YouTube
-// -------------------------
+
 
 function blockYouTube() {
 
@@ -50,9 +49,9 @@ function blockYouTube() {
 }
 
 
-// -------------------------
+
 // Instagram
-// -------------------------
+
 
 function blockInstagram() {
 
@@ -82,9 +81,9 @@ function blockInstagram() {
 }
 
 
-// -------------------------
+
 // Block screen
-// -------------------------
+
 
 function showBlockedScreen(type) {
 
@@ -113,9 +112,8 @@ function showBlockedScreen(type) {
 }
 
 
-// -------------------------
 // Start
-// -------------------------
+
 
 function startBlocking() {
 
@@ -134,9 +132,9 @@ function startBlocking() {
 }
 
 
-// -------------------------
+
 // Detect dynamically loaded content
-// -------------------------
+
 
 const observer = new MutationObserver(() => {
 
@@ -151,9 +149,9 @@ observer.observe(document.body, {
 });
 
 
-// -------------------------
-// Settings changed
-// -------------------------
+
+//
+
 
 chrome.storage.onChanged.addListener((changes) => {
 
