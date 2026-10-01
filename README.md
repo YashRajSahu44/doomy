@@ -71,9 +71,9 @@ This creates a `dist/` folder containing the ready-to-load extension.
 2. Turn on **Developer mode** (toggle in the top-right corner).
 3. Click **Load unpacked**.
 4. Select the **`dist`** folder inside the `doomy` project.
-5. Doomy now appears in your extensions list. Click the 🧩 puzzle icon in the toolbar and **pin** Doomy for quick access.
+5. Doomy now appears in your extensions list. Click the  puzzle icon in the toolbar and **pin** Doomy for quick access.
 
-### Step 5: You're done 🎉
+### Step 5: You're done 
 
 Open a site with Reels or Shorts and see Doomy at work. If the page was already open, **refresh it** once.
 
