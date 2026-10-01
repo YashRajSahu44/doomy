@@ -127,14 +127,14 @@ doomy/
 └── package.json
 ```
 
-## ⚙️ How It Works
+##  How It Works
 
 1. A **content script** (`content.js`) runs on supported pages.
 2. It detects Reels and Shorts elements and links in the page.
 3. It hides or removes them using injected styles (`content.css`) and DOM observation, so content loaded as you scroll is caught too.
 4. The **popup** (`App.jsx`) lets you control the extension.
 
-## 🧰 Tech Stack
+##  Tech Stack
 
 - **React**: popup interface
 - **Vite**: fast builds and dev server
