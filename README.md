@@ -108,7 +108,7 @@ This starts the Vite dev server with hot reload. Load the generated output folde
 | `npm run lint` | Run ESLint on the project |
 | `npm run preview` | Preview the production build |
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 doomy/
