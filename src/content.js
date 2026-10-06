@@ -36,12 +36,17 @@ function blockYouTube() {
         link.style.display = "none";
       }
 
+      // Hiding a feed item does not stop its audio or video.
+      stopMedia(container || link);
+
     });
 
 
   // Block direct Shorts page
   if (window.location.pathname.startsWith("/shorts/")) {
 
+    // Stop any player already running on the blocked page.
+    stopMedia(document);
     showBlockedScreen("YouTube Shorts");
 
   }
@@ -68,12 +73,17 @@ function blockInstagram() {
         link.style.display = "none";
       }
 
+      // Hiding a feed item does not stop its audio or video.
+      stopMedia(article || link);
+
     });
 
 
   // Direct Reel
   if (window.location.pathname.startsWith("/reels/")) {
 
+    // Stop any player already running on the blocked page.
+    stopMedia(document);
     showBlockedScreen("Instagram Reels");
 
   }
@@ -132,8 +142,64 @@ function startBlocking() {
 }
 
 
+// Pause media that is already inside a blocked feed item or page.
+function stopMedia(container) {
+
+  container.querySelectorAll("video, audio").forEach((media) => {
+    media.pause();
+  });
+
+}
+
+
+// Match playback events to Shorts or Reels when blocking is enabled.
+function isBlockedMedia(media) {
+
+  if (settings.youtube && window.location.hostname.includes("youtube.com")) {
+    if (window.location.pathname.startsWith("/shorts/")) {
+      return true;
+    }
+
+    const container = media.closest(
+      "ytd-rich-item-renderer, ytd-grid-video-renderer, ytd-reel-item-renderer"
+    );
+
+    return Boolean(container?.querySelector('a[href*="/shorts/"]'));
+  }
+
+  if (settings.instagram && window.location.hostname.includes("instagram.com")) {
+    if (window.location.pathname.startsWith("/reels/")) {
+      return true;
+    }
+
+    const article = media.closest("article");
+
+    return Boolean(article?.querySelector('a[href*="/reels/"]'));
+  }
+
+  return false;
+
+}
+
+
+// Catch later autoplay attempts on blocked content.
+function pauseBlockedMedia(event) {
+
+  const media = event.target;
+
+  if (media instanceof HTMLMediaElement && isBlockedMedia(media)) {
+    media.pause();
+  }
+
+}
+
+
 
 // Detect dynamically loaded content
+
+
+// Use capture so blocked media is paused as soon as playback starts.
+document.addEventListener("play", pauseBlockedMedia, true);
 
 
 const observer = new MutationObserver(() => {
